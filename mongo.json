@@ -7,45 +7,19 @@ Colección: profesionales_ti
     "telefono": "string",
     "linkedin": "string",
     "ubicacion": "string",
-    "experiencia_laboral": [
-        {
-            "codigo_experiencia_laboral": ObjectId,
-            "empresa": "string",
-            "puesto": "string",
-            "fecha_inicio": "date",
-            "fecha_fin": "date",
-            "descripcion": "string",
-            "tecnologias": [
-                {
-                    "codigo_tecnologia": ObjectId,
-                    "nombre": "string"
-                }
-            ]
-        }
-    ],
+    "codigo_experiencia_laboral": ObjectId,
     "certificaciones": [
-        {
-            "codigo": ObjectId,
-            "nombre": "string",
-            "institucion": "string",
-            "fecha_obtencion": "date",
-            "fecha_expiracion": "date"
-        }
+        "codigo_certificacion": ObjectId
     ],
     "especialidades": [
-        {
-            "codigo": ObjectId,
-            "nombre": "string",
-            "descripcion": "string"
-        }
+         "codigo_especialidad": ObjectId
     ],
-    "portafolio": [
+    "portafolio": 
         {
             "nombre": "string",
             "descripcion": "string",
             "url": "string"
         }
-    ]
 }
 
 Colección: certificaciones
