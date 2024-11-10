@@ -7,13 +7,9 @@ Colección: profesionales_ti
     "telefono": "string",
     "linkedin": "string",
     "ubicacion": "string",
-    "codigo_experiencia_laboral": ObjectId,
-    "certificaciones": [
-        "codigo_certificacion": ObjectId
-    ],
-    "especialidades": [
-         "codigo_especialidad": ObjectId
-    ],
+    "experiencias_laborales": [ObjectId],
+    "certificaciones": [ObjectId],
+    "especialidades": [ObjectId],
     "portafolio": 
         {
             "nombre": "string",
@@ -30,7 +26,7 @@ Colección: certificaciones
     "institucion": "string",
     "fecha_obtencion": "date",
     "fecha_expiracion": "date",
-    "codigo_profesional": ObjectId
+    "profesionales": [ObjectId]
 }
 
 Colección: especialidades
@@ -39,25 +35,19 @@ Colección: especialidades
     "codigo": ObjectId,
     "nombre": "string",
     "descripcion": "string",
-    "codigo_profesional": ObjectId
+    "profesionales": [ObjectId]
 }
 
 Colección: experiencias_laborales
 
 {
-    "codigo_experiencia_laboral": ObjectId,
-    "codigo_profesional": ObjectId,
+    "codigo": ObjectId,
     "empresa": "string",
     "puesto": "string",
     "fecha_inicio": "date",
     "fecha_fin": "date",
     "descripcion": "string",
-    "tecnologias": [
-        {
-            "codigo_tecnologia": ObjectId,
-            "nombre": "string"
-        }
-    ]
+    "tecnologias": [ObjectId]
 }
 
 Colección: tecnologias
