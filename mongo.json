@@ -67,35 +67,7 @@ Colección: empresas
     "correo": "string",
     "telefono": "string",
     "ubicacion": "string",
-    "ofertas": [
-        {
-            "codigo_oferta": ObjectId,
-            "titulo": "string",
-            "descripcion": "string",
-            "fecha_publicacion": "date",
-            "fecha_limite": "date",
-            "vacantes": [
-                {
-                    "codigo_vacante": ObjectId,
-                    "puesto": "string",
-                    "descripcion": "string",
-                    "salario": "string",
-                    "requerimientos_tecnicos": [
-                        {
-                            "codigo": ObjectId,
-                            "descripcion": "string",
-                            "tecnologias": [
-                                {
-                                    "codigo_tecnologia": ObjectId,
-                                    "nombre": "string"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+    "ofertas": [ObjectId]
 }
 
 Colección: ofertas
@@ -107,15 +79,7 @@ Colección: ofertas
     "fecha_publicacion": "date",
     "fecha_limite": "date",
     "codigo_empresa": ObjectId,
-    "vacantes": [
-        {
-            "codigo_vacante": ObjectId,
-            "puesto": "string",
-            "descripcion": "string",
-            "salario": "string",
-            "codigo_requerimiento_tecnico": ObjectId
-        }
-    ]
+    "vacantes": [ObjectId]
 }
 
 Colección: vacantes
@@ -135,10 +99,5 @@ Colección: requerimientos_tecnicos
     "codigo": ObjectId,
     "codigo_vacante": ObjectId,
     "descripcion": "string",
-    "tecnologias": [
-        {
-            "codigo_tecnologia": ObjectId,
-            "nombre": "string"
-        }
-    ]
+    "tecnologias": [ObjectId]
 }
