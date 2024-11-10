@@ -1,103 +1,203 @@
 Colección: profesionales_ti
 {
-    "codigo": ObjectId,
+    "codigo": "ObjectId",
     "nombre": "string",
     "apellido": "string",
     "correo": "string",
     "telefono": "string",
     "linkedin": "string",
     "ubicacion": "string",
-    "experiencias_laborales": [ObjectId],
-    "certificaciones": [ObjectId],
-    "especialidades": [ObjectId],
-    "portafolio": 
+    "experiencias_laborales": [
         {
-            "nombre": "string",
+            "codigo": "ObjectId",
+            "empresa": "string",
+            "puesto": "string",
+            "fecha_inicio": "date",
+            "fecha_fin": "date",
             "descripcion": "string",
-            "url": "string"
+            "tecnologias": [
+                {
+                    "codigo": "ObjectId",
+                    "nombre": "string",
+                    "descripcion": "string"
+                }
+            ]
         }
+    ],
+    "certificaciones": [
+        {
+            "codigo": "ObjectId",
+            "nombre": "string",
+            "institucion": "string",
+            "fecha_obtencion": "date",
+            "fecha_expiracion": "date"
+        }
+    ],
+    "especialidades": [
+        {
+            "codigo": "ObjectId",
+            "nombre": "string",
+            "descripcion": "string"
+        }
+    ],
+    "portafolio": {
+        "nombre": "string",
+        "descripcion": "string",
+        "url": "string"
+    }
 }
 
 Colección: certificaciones
-
 {
-    "codigo": ObjectId,
+    "codigo": "ObjectId",
     "nombre": "string",
     "institucion": "string",
     "fecha_obtencion": "date",
     "fecha_expiracion": "date",
-    "profesionales": [ObjectId]
+    "profesionales": [
+        {
+            "codigo": "ObjectId",
+            "nombre": "string",
+            "apellido": "string",
+            "correo": "string"
+        }
+    ]
 }
-
 Colección: especialidades
-
 {
-    "codigo": ObjectId,
+    "codigo": "ObjectId",
     "nombre": "string",
     "descripcion": "string",
-    "profesionales": [ObjectId]
+    "profesionales": [
+        {
+            "codigo": "ObjectId",
+            "nombre": "string",
+            "apellido": "string",
+            "correo": "string"
+        }
+    ]
 }
 
 Colección: experiencias_laborales
-
 {
-    "codigo": ObjectId,
+    "codigo": "ObjectId",
     "empresa": "string",
     "puesto": "string",
     "fecha_inicio": "date",
     "fecha_fin": "date",
     "descripcion": "string",
-    "tecnologias": [ObjectId]
+    "tecnologias": [
+        {
+            "codigo": "ObjectId",
+            "nombre": "string",
+            "descripcion": "string"
+        }
+    ]
 }
 
 Colección: tecnologias
-
 {
-    "codigo": ObjectId,
+    "codigo": "ObjectId",
     "nombre": "string",
     "descripcion": "string"
 }
 
 Colección: empresas
-
 {
-    "codigo": ObjectId,
+    "codigo": "ObjectId",
     "nombre": "string",
     "sector": "string",
     "correo": "string",
     "telefono": "string",
     "ubicacion": "string",
-    "ofertas": [ObjectId]
+    "ofertas": [
+        {
+            "codigo": "ObjectId",
+            "titulo": "string",
+            "descripcion": "string",
+            "fecha_publicacion": "date",
+            "fecha_limite": "date",
+            "vacantes": [
+                {
+                    "codigo": "ObjectId",
+                    "puesto": "string",
+                    "descripcion": "string",
+                    "salario": "string"
+                }
+            ]
+        }
+    ]
 }
 
 Colección: ofertas
-
 {
-    "codigo": ObjectId,
+    "codigo": "ObjectId",
     "titulo": "string",
     "descripcion": "string",
     "fecha_publicacion": "date",
     "fecha_limite": "date",
-    "codigo_empresa": ObjectId,
-    "vacantes": [ObjectId]
+    "codigo_empresa": {
+        "codigo": "ObjectId",
+        "nombre": "string",
+        "sector": "string"
+    },
+    "vacantes": [
+        {
+            "codigo": "ObjectId",
+            "puesto": "string",
+            "descripcion": "string",
+            "salario": "string",
+            "codigo_requerimiento_tecnico": {
+                "codigo": "ObjectId",
+                "descripcion": "string",
+                "tecnologias": [
+                    {
+                        "codigo": "ObjectId",
+                        "nombre": "string"
+                    }
+                ]
+            }
+        }
+    ]
 }
 
 Colección: vacantes
-
 {
-    "codigo": ObjectId,
+    "codigo": "ObjectId",
     "puesto": "string",
     "descripcion": "string",
     "salario": "string",
-    "codigo_oferta": ObjectId,
-    "codigo_requerimiento_tecnico": ObjectId
+    "codigo_oferta": {
+        "codigo": "ObjectId",
+        "titulo": "string",
+        "descripcion": "string"
+    },
+    "codigo_requerimiento_tecnico": {
+        "codigo": "ObjectId",
+        "descripcion": "string",
+        "tecnologias": [
+            {
+                "codigo": "ObjectId",
+                "nombre": "string"
+            }
+        ]
+    }
 }
 
 Colección: requerimientos_tecnicos
-
 {
-    "codigo": ObjectId,
-    "codigo_vacante": ObjectId,
+    "codigo": "ObjectId",
+    "codigo_vacante": {
+        "codigo": "ObjectId",
+        "puesto": "string",
+        "descripcion": "string"
+    },
     "descripcion": "string",
-    "tecnologias": [ObjectId]
+    "tecnologias": [
+        {
+            "codigo": "ObjectId",
+            "nombre": "string",
+            "descripcion": "string"
+        }
+    ]
 }
